@@ -45,9 +45,9 @@ async def on_message(message: discord.Message):
     for word in message_words:
         word = word.lower()
         if word not in commons:
-            to_send = True
             definition = dictionary.meaning(word)
             try:
+                to_send = True
                 text = ""
                 for de in definition.items():
                     text += f"**{de[0]}:**\n"
